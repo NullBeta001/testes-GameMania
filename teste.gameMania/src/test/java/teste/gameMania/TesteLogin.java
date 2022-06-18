@@ -28,7 +28,7 @@ public class TesteLogin {
 	}
 	
 	@Test
-	public void TestarLoin() {
+	public void TestarLogin() {
 		
 		WebElement campoEmail = driver.findElement(By.id("email"));
 		WebElement campoSenha = driver.findElement(By.id("senha"));
