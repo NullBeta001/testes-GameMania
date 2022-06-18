@@ -1,0 +1,53 @@
+package teste.gameMania;
+
+import java.util.concurrent.TimeUnit;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class TesteLogin {
+	
+	private WebDriver driver;
+	
+	@Before
+	public void ConfigurarTeste() {
+		System.setProperty("webdriver.chrome.driver", "C:\\Program Files\\Chromedriver\\chromedriver.exe");
+		driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		
+		driver.get("http://localhost:4200/");
+		
+		//*[@id="menu"]/a[1] -> XPath do link
+		driver.findElement(By.xpath("//*[@id=\"menu\"]/a[1]")).click();
+	}
+	
+	@Test
+	public void TestarLoin() {
+		
+		try {
+			driver.findElement(By.id("email")).sendKeys("pedro@gmail.com");
+			driver.findElement(By.id("senha")).sendKeys("fabio123@");
+			driver.findElement(By.id("botao-enviar")).click();
+			
+			Thread.sleep(3000);
+			
+			driver.findElement(By.id("email")).clear();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
+	}
+	
+	@After
+	public void EncerrarTeste() {
+		
+	}
+	
+}

@@ -1,0 +1,19 @@
+package teste.senai;
+
+import org.openqa.selenium.WebDriver;
+
+public class TesteCursosSenai {
+	
+	private WebDriver driver;
+	
+	@Before
+	public void ConfigurarTeste( ) {
+		System.setProperty("Webdriver.chrome.driver", "C:\\Program Files\\Chromedriver\\chromedriver.exe")
+	}
+	
+	@Test
+	public void TesteNavegabilidade( ) {
+		
+	}
+	
+}
